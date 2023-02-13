@@ -1,5 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
-import TaskItem from "./TaskItem";
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const todoSlice= createSlice({
     nom: "todo",
@@ -24,5 +23,11 @@ const todoSlice= createSlice({
             state = state.filter((t)=>t.id !== action.payload);
             return state
         },
+    }
+})
+
+export const store = configureStore({
+    reducer:{
+        todo: todoSlice.reducer
     }
 })
