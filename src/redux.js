@@ -1,7 +1,7 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const todoSlice= createSlice({
-    nom: "todo",
+    name: "todo",
     initialState:[
         { id: 1, text: "Faire les courses", done: false },
         { id: 2, text: "Ménage !", done: true },
@@ -25,6 +25,7 @@ const todoSlice= createSlice({
         },
     }
 })
+export const { addTask,toggleTask,deleteTask } = todoSlice.actions;
 
 export const store = configureStore({
     reducer:{
